@@ -15,7 +15,7 @@ import com.cfs.ems.service.LoginService;
 
 
 
-public class InsertProjectAllocation extends HttpServlet{
+public class InsertProjectAllocationServlet extends HttpServlet{
 
 	
 	/**

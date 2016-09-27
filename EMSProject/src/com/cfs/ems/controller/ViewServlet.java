@@ -18,7 +18,7 @@ import com.cfs.ems.domain.Employee;
 import com.cfs.ems.service.EmployeeService;
 import com.cfs.ems.service.EmployeeServiceImpl;
 
-public class viewservlet extends HttpServlet {
+public class ViewServlet extends HttpServlet {
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws IOException, ServletException {

@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cfs.ems.dao.GetData;
 
-public class SearchProject extends HttpServlet {
+public class SearchProjectServlet extends HttpServlet {
 
 	
 	private static final long serialVersionUID = 1L;

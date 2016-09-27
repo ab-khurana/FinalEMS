@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cfs.ems.dao.GetData;
 
-public class CreateProject extends HttpServlet {
+public class CreateProjectServlet extends HttpServlet {
 
 	
 	private static final long serialVersionUID = 1L;

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cfs.ems.dao.GetData;
 import com.cfs.ems.domain.ProjectDomain;
 
-public class EditProjectDetails extends HttpServlet {
+public class EditProjectDetailsServlet extends HttpServlet {
 		
 	
 	/*public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException

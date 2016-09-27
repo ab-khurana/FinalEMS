@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cfs.ems.dao.GetData;
 import com.cfs.ems.domain.ProjectDomain;
 
-public class PrintAll extends HttpServlet {
+public class PrintAllServlet extends HttpServlet {
 
  static final long serialVersionUID = 1L;
  

@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Project extends HttpServlet {
+public class ProjectServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
@@ -54,7 +54,7 @@ public class Project extends HttpServlet {
 				"<input type='submit' value='Search Project'>"   +
 				"</form>");
 		out.println("<h3>List of Projects :</h3>");
-		new PrintAll().doPost(request, response);
+		new PrintAllServlet().doPost(request, response);
 		
 		out.println("</body>" +
 				"</html>" );

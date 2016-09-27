@@ -18,7 +18,7 @@ import com.cfs.ems.service.EmployeeServiceMy;
  * Servlet implementation class RegisterServletMy
  */
 @WebServlet("/RegisterServletMy")
-public class RegisterServletMy extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		PrintWriter out = response.getWriter();
 		System.out.println("in first");

@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.cfs.ems.service.UpdateEmployeeService;
 import com.cfs.ems.service.UpdateEmployeeServiceImp;
 
-public class UpdateEmployeeDetails extends HttpServlet {
+public class UpdateEmployeeDetailsServlet extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{

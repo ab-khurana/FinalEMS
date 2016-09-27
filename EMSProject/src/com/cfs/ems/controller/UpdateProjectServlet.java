@@ -19,7 +19,7 @@ import com.cfs.ems.dao.GetData;
 import com.cfs.ems.dao.UpdateProjectDao;
 import com.cfs.ems.domain.ProjectDomain;
 
-public class UpdateProject extends HttpServlet {
+public class UpdateProjectServlet extends HttpServlet {
 
 	
 	private static final long serialVersionUID = 1L;

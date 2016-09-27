@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cfs.ems.dao.GetData;
 
-public class EditProject extends HttpServlet {
+public class DeleteProjectServlet extends HttpServlet {
 
 	
 	private static final long serialVersionUID = 1L;
@@ -19,14 +19,12 @@ public class EditProject extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException
 	{
 		PrintWriter out = response.getWriter();
-		
 		response.setContentType("text/html");
-		
-		out.println("<Form action='EditProjectDetails' method='post'>");
-		out.println("Project I:    <select name='Dropdown'>"); 
+		out.println("<form action='deleteProject' method='Post'>" +
+					"<h4> Project ID:    <select name='pId'>"); 
 		List<String> l=null;
 			try {
-				l=new GetData().getData("project_id", "project_details");
+				l=new GetData().getData("project_id", "project_details", "status", "Active");
 				
 			} catch (ClassNotFoundException e) {
 				// TODO Auto-generated catch block
@@ -35,13 +33,14 @@ public class EditProject extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			for(String a: l)
-			{
-					out.println("<option>" +a+"</option>");
-			}
-					out.println("</select> " +
-							"<input type='submit' value='Submit'>" +
-							" </form>");
+for(String a: l)
+{
+out.println("<option>" +a+"</option>");
+}
+out.println("</select>" +
+						
+					"<input type='submit' value='submit'>" +
+					"</form>");				
 		
 	}
 

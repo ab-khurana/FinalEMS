@@ -17,7 +17,7 @@ import com.cfs.ems.dao.ListOfProjectsInterface;
 
 
 
-public class InsertProcess extends HttpServlet{
+public class InsertProcessServlet extends HttpServlet{
 	
 	/**
 	 * 
