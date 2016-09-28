@@ -51,7 +51,9 @@ public class LoginServlet extends HttpServlet {
 			
 			if(status.getStatus()==1){
 				//					response.getWriter().write("Login Successful for "+status.getEmpName() + " " + status.getEmpLastName());
-				response.sendRedirect("dashboard.jsp");
+//				response.sendRedirect("dashboard.jsp");
+				RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
+				rd.forward(request, response);
 			}
 			else if (status.getStatus()==2){
 				//					response.sendRedirect("EmployeeHome.jsp");
