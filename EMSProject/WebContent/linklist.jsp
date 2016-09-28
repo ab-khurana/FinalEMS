@@ -57,7 +57,13 @@
 							
 								<br> 
 								 <!-- <a href="searchproject.com">search project</a><br> -->
-								<a href="ListOfProjects.html">list  and edit projects</a><br>
+								 
+								 <form action="ListOfProjects">
+		
+								<input type="submit" value ="list  and edit projects">
+
+								</form>
+								<!-- <a href="listOfProjects.jsp">list  and edit projects</a><br> -->
 								<!-- <a href="loginpage.jsp">remove employee from project</a><br> -->
 						<p>
 							<!-- LEAVE<br> <a href="apply leave.com">apply leave</a><br>

@@ -30,20 +30,14 @@ public class UpdateProjectAllocationServlet extends HttpServlet {
 		}
 
 		if (status) {
-			/*RequestDispatcher rd = request
-					.getRequestDispatcher("/updateprojectAllocation");
-			rd.include(request, response);
-			out.println("<html><body onload=\"alert('Data Updated Successfully')\"></body></html>");*/
-			out.println("yess");
+			
+			response.sendRedirect("ListOfProjects");
+			//out.println("<html><body onload=\"alert('Data Updated Successfully')\"></body></html>");
+			
 			
 		} else {
 
-			/*RequestDispatcher rd = request
-					.getRequestDispatcher("listOfProjects.jsp");
-			rd.include(request, response);
-			out.println("<html><body onload=\"alert('Data Not Updated')\"></body></html>");*/
-			
-			out.println("noo");
+			response.sendRedirect("ListOfProjects");
 		}
 	}
 

@@ -83,7 +83,7 @@ public class LoginService implements LoginInterface {
 	public ProjectAllocation editAllocate(String id) throws Exception {
 		
 		ProjectAllocation emp = new ProjectAllocation();
-System.out.println(id);
+		System.out.println(id);
 		emp.setProjectAllId(id);
 
 		ListOfProjectsInterface doi = new ListOfProjectsDatabase();
@@ -121,7 +121,7 @@ System.out.println(id);
 		
 		ListOfProjectsInterface alldoa = new ListOfProjectsDatabase();
 		Boolean s = alldoa.updateprojectAllocation(proall);
-		
+		System.out.println("hello");
 		
 		return s;
 	}

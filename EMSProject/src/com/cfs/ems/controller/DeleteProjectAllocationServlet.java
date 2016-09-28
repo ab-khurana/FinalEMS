@@ -23,13 +23,13 @@ public class DeleteProjectAllocationServlet extends HttpServlet {
 			employeeService = new LoginService();
 			Boolean status = employeeService.deleteService(id);
 			if(status) {
-				out.print("<alert>Employee deleted successfully...!!!</alert>");
+				response.sendRedirect("ListOfProjects");
 			} else {
-				out.print("Failed to delete employee...!!!");
+				response.sendRedirect("ListOfProjects");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			out.print("Exception occured... Please try again later...");
+			out.print("");
 		}			
 	
 	}

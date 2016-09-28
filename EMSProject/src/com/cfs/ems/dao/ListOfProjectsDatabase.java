@@ -210,6 +210,7 @@ public class ListOfProjectsDatabase implements ListOfProjectsInterface {
 		}
 
 		con1.close();
+		System.out.println("hello1");
 		return e1;
 	}
 
