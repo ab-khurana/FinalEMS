@@ -12,7 +12,7 @@ import com.cfs.ems.dao.GetData;
 
 import com.cfs.ems.domain.ProjectDomain;
 
-public class SearchProjectDeatils extends HttpServlet {
+public class SearchProjectDeatilsServlet extends HttpServlet {
 
 	
 	private static final long serialVersionUID = 1L;

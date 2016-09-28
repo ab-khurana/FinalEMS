@@ -114,7 +114,7 @@
   
   <servlet>
   <servlet-name>DeleteProject</servlet-name>
-  <servlet-class>com.cfs.ems.controller.DeleteprojectServlet</servlet-class>
+  <servlet-class>com.cfs.ems.controller.DeleteProjectServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
