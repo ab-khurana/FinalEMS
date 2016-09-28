@@ -38,8 +38,25 @@
 							<button><a href="searchemployee.com">search employee</a><br></button>
 							<button><a href="searchemployee.com">DELETE employee</a><br></button> -->
 						<p>	PROJECT
-							<form action="project" method="get">
-							<input type = "submit" value="Project">
+							
+							<form action='CreateProject' method='post'>
+							<input type='submit' value='Create Project'>
+							</form>
+	
+							<form action='DeleteProject' method='post'>
+							<input type='submit' value='Delete Project'>
+							</form>
+		
+							<form action='EditProject' method='post'>
+							<input type='submit' value='Edit Project'>
+							</form>
+
+							<form action='SearchProject' method='post'>
+							<input type='submit' value='Search Project'>
+							</form>
+							
+							<form action='PrintAllServlet' method='post'>
+							<input type='submit' value='List of Projects'>
 							</form>
 							
 							<!-- PROJECT<br> <button><a href="createproject.com">create project</a><br></button>

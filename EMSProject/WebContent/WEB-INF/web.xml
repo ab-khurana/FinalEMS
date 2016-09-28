@@ -121,6 +121,16 @@
   <servlet-name>DeleteProject</servlet-name>
   <url-pattern>/DeleteProject</url-pattern>
   </servlet-mapping>
+  <servlet>
+  
+  <servlet-name>PrintServlet</servlet-name>
+  <servlet-class>com.cfs.ems.controller.PrintAllServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>PrintServlet</servlet-name>
+  <url-pattern>/PrintAllServlet</url-pattern>
+  </servlet-mapping>
   
   <servlet>
   <servlet-name>DeleteProjectServlet</servlet-name>

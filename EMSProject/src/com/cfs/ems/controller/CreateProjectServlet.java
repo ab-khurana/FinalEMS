@@ -22,32 +22,31 @@ public class CreateProjectServlet extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		
 		response.setContentType("text/html");
-		
 		out.println("<form action='ProjectDeatilsInput' method='post'>" +
-"Project  Id: <input type='text' name ='ProjectId' value=''>" + 
-"<br><br>" +
-"Project Name: <input type='text' name ='ProjectName' value=''>" +
-"<br><br>" +
-"Start Date(YYYY-MM-DD Format Only): <input type='text' id='DATE' name='start_date' value=''>" +
-"<br><br>" +
-"End Date(YYYY-MM-DD Format Only):   <input type='text' name ='end_date' value=' '>" +
-"<br><br>");
-out.println("Manager Id:    <select name='Dropdown'>"); 
-		List<String> l=null;
-			try {
-				l=new GetData().getData("employee_id", "employee_details");
+					"Project  Id: <input type='text' name ='ProjectId' value=''>" + 
+					"<br><br>" +
+					"Project Name: <input type='text' name ='ProjectName' value=''>" +
+					"<br><br>" +
+					"Start Date(YYYY-MM-DD Format Only): <input type='text' id='DATE' name='start_date' value=''>" +
+					"<br><br>" +
+					"End Date(YYYY-MM-DD Format Only):   <input type='text' name ='end_date' value=' '>" +
+					"<br><br>");
+					out.println("Manager Id:    <select name='Dropdown'>"); 
+					List<String> l=null;
+					try {
+						l=new GetData().getData("employee_id", "employee_details");
 				
-			} catch (ClassNotFoundException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+						} catch (ClassNotFoundException e) {
+							
+							e.printStackTrace();
+							} catch (SQLException e) {
+				
+								e.printStackTrace();
+							}
 			
-out.println("<option selected> </option>");
-for(String a: l)
-{
+					out.println("<option selected> </option>");
+					for(String a: l)
+					{
 out.println("<option>" +a+"</option>");
 }
 out.println("</select>");
