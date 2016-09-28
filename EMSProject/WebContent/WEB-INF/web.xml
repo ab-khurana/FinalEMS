@@ -53,7 +53,7 @@
   
   <servlet>
   	<servlet-name>allocateform</servlet-name>
-  	<servlet-class>com.cfs.ems.controller.InsertProcess</servlet-class>
+  	<servlet-class>com.cfs.ems.controller.InsertProcessServlet</servlet-class>
   </servlet>
 
 <servlet-mapping>
@@ -62,7 +62,7 @@
   </servlet-mapping>
   <servlet>
   	<servlet-name>allocate</servlet-name>
-  	<servlet-class>com.cfs.ems.controller.InsertProjectAllocation</servlet-class>
+  	<servlet-class>com.cfs.ems.controller.InsertProjectAllocationServlet</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>editallocate</servlet-name>
@@ -70,7 +70,7 @@
   </servlet-mapping>
   <servlet>
   	<servlet-name>editallocate</servlet-name>
-  	<servlet-class>com.cfs.ems.controller.UpdateForm</servlet-class>
+  	<servlet-class>com.cfs.ems.controller.UpdateFormServlet</servlet-class>
   </servlet>
   
     <servlet-mapping>
@@ -79,12 +79,12 @@
   </servlet-mapping>
   <servlet>
   	<servlet-name>updateprojectAllocation</servlet-name>
-  	<servlet-class>com.cfs.ems.controller.UpdateProjectAllocation</servlet-class>
+  	<servlet-class>com.cfs.ems.controller.UpdateProjectAllocationServlet</servlet-class>
   </servlet>
   
   <servlet>
   <servlet-name>Project</servlet-name>
-  <servlet-class>com.cfs.ems.controller.Project</servlet-class>
+  <servlet-class>com.cfs.ems.controller.ProjectServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -94,7 +94,7 @@
   
   <servlet>
   <servlet-name>CreateProject</servlet-name>
-  <servlet-class>com.cfs.ems.controller.CreateProject</servlet-class>
+  <servlet-class>com.cfs.ems.controller.CreateProjectServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -104,7 +104,7 @@
   
   <servlet>
   <servlet-name>ProjectDeatilsInput</servlet-name>
-  <servlet-class>com.cfs.ems.controller.ProjectDeatilsInput</servlet-class>
+  <servlet-class>com.cfs.ems.controller.ProjectDeatilsInputServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -114,7 +114,7 @@
   
   <servlet>
   <servlet-name>DeleteProject</servlet-name>
-  <servlet-class>com.cfs.ems.controller.Deleteproject</servlet-class>
+  <servlet-class>com.cfs.ems.controller.DeleteprojectServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -134,7 +134,7 @@
   
   <servlet>
   <servlet-name>EditProject</servlet-name>
-  <servlet-class>com.cfs.ems.controller.EditProject</servlet-class>
+  <servlet-class>com.cfs.ems.controller.EditProjectServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -144,7 +144,7 @@
   
   <servlet>
   <servlet-name>EditProjectDetails</servlet-name>
-  <servlet-class>com.cfs.ems.controller.EditProjectDetails</servlet-class>
+  <servlet-class>com.cfs.ems.controller.EditProjectDetailsServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -154,7 +154,7 @@
   
   <servlet>
   <servlet-name>UpdateProject</servlet-name>
-  <servlet-class>com.cfs.ems.controller.UpdateProject</servlet-class>
+  <servlet-class>com.cfs.ems.controller.UpdateProjectServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
@@ -164,7 +164,7 @@
   
   <servlet>
     <servlet-name>SearchProject</servlet-name>
-    <servlet-class>com.cfs.ems.controller.SearchProject</servlet-class>
+    <servlet-class>com.cfs.ems.controller.SearchProjectServlet</servlet-class>
   </servlet>
   
      <servlet-mapping>
@@ -174,7 +174,7 @@
    
    <servlet>
     <servlet-name>SearchProjectDeatils</servlet-name>
-    <servlet-class>com.cfs.ems.controller.SearchProjectDeatils</servlet-class>
+    <servlet-class>com.cfs.ems.controller.SearchProjectDeatilsServlet</servlet-class>
   </servlet>
   
      <servlet-mapping>
@@ -184,7 +184,7 @@
    
    <servlet>
     <servlet-name>CreateNewClient</servlet-name>
-    <servlet-class>com.cfs.ems.controller.CreateNewClient</servlet-class>
+    <servlet-class>com.cfs.ems.controller.CreateNewClientServlet</servlet-class>
   </servlet>
   
      <servlet-mapping>
@@ -193,7 +193,7 @@
    </servlet-mapping>
    <servlet>
     <servlet-name>ClientInputDetails</servlet-name>
-    <servlet-class>com.cfs.ems.controller.ClientInputDetails</servlet-class>
+    <servlet-class>com.cfs.ems.controller.ClientInputDetailsServlet</servlet-class>
   </servlet>
   
      <servlet-mapping>
@@ -218,7 +218,7 @@
   
    <servlet>
   	<servlet-name>abc</servlet-name>
-  	<servlet-class>com.cfs.ems.controller.viewservlet</servlet-class>
+  	<servlet-class>com.cfs.ems.controller.ViewServlet</servlet-class>
   </servlet>
   <servlet-mapping>
    	<servlet-name>as</servlet-name>
@@ -252,7 +252,7 @@
   
   <servlet>
     <servlet-name>updateemployeedetails</servlet-name>
-    <servlet-class>com.cfs.ems.controller.UpdateEmployeeDetails</servlet-class>
+    <servlet-class>com.cfs.ems.controller.UpdateEmployeeDetailsServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>updateemployeedetails</servlet-name>
@@ -264,7 +264,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>register</servlet-name>
-    <servlet-class>com.cfs.ems.controller.RegisterServletMy</servlet-class>
+    <servlet-class>com.cfs.ems.controller.RegisterServlet</servlet-class>
   </servlet>
   
   <!-- <servlet>
