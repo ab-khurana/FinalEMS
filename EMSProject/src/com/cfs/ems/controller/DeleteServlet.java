@@ -19,7 +19,7 @@ public class DeleteServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		PrintWriter out= resp.getWriter();
-		
+		// getting employee id
 		String Employee_ID= req.getParameter("Employee_ID");
 		System.out.println(Employee_ID);
 		DeleteDao delete= new DeleteDao();
