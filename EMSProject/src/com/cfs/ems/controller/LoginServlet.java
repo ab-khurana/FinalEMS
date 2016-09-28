@@ -16,10 +16,24 @@ import com.cfs.ems.domain.*;
 
 import com.cfs.ems.service.LoginService;
 
+/**
+ * @author sausengu
+ *
+ */
 public class LoginServlet extends HttpServlet {
+	
+	
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	 
+	/**@me
+	 * @author Saurav Sengupta
+	 * @param request response
+	 * @return void
+	 * @throws ServletException, ServletException
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, ServletException {
 
 
 		LoginService lservice = null;
@@ -54,7 +68,7 @@ public class LoginServlet extends HttpServlet {
 
 			}
 			else
-				response.sendRedirect("home.html");
+				response.sendRedirect("loginAgain.jsp");
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

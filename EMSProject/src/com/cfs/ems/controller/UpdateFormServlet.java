@@ -22,7 +22,7 @@ public class UpdateFormServlet extends HttpServlet{
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		
-		
+		response.setContentType("text/html");
 		String id=request.getParameter("id");
 		
 		System.out.println(id);
@@ -41,7 +41,7 @@ public class UpdateFormServlet extends HttpServlet{
 		//System.out.println("a");
 		 response.getWriter().write("<form action=updateprojectAllocation method=post>");
          response.getWriter().write("<center>");
-         response.getWriter().write("Project Allocation Id (Do not change ):<input type='text' value="+e1.getProjectAllId()+" name='projectAllid'>");
+         response.getWriter().write("Project Allocation Id (Do not change ):<input readonly type='text' value="+e1.getProjectAllId()+" name='projectAllid'>");
          response.getWriter().write("<br><br><br>");
          
          ListOfProjectsInterface alldoa = new ListOfProjectsDatabase();
@@ -67,7 +67,7 @@ public class UpdateFormServlet extends HttpServlet{
         
          
          response.getWriter().write("<br><br><br>");
-         response.getWriter().write("Employee Id :<input type='date' value="+e1.getEmployeeId()+" name='employeeId'>");
+         response.getWriter().write("Employee Id :<input type='text' readonly value="+e1.getEmployeeId()+" name='employeeId'>");
          
          response.getWriter().write("<br><br><br>");
          response.getWriter().write("Designation: <select name='designation'>" +

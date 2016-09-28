@@ -8,13 +8,23 @@
 <title>Insert title here</title>
 </head>
 <%@ page import="java.util.*" %>
+<script language="javascript">
+function validateForm() {
+    var x = document.forms["form"]["startdate"].value;
+    var y = document.forms["form"]["enddate"].value;
+    if (y<x) {
+        alert("Date must be filled correctly");
+        return false;
+    }
+}
+</script>
 <body>
 <center>
 				<font size="5" color="Red">Project Allocations:</font>
 				<br><br>
-				<form action="allocate" method="post">
+				<form action="allocate" method="post" onsubmit="return validateForm()" name="form">
 				<%
-				java.util.List dataList = (List) request.getSession().getAttribute("somename");
+				java.util.List dataList = (List) request.getSession().getAttribute("projectName");
 				java.util.Iterator itr = dataList.iterator();
 				
 				%>
@@ -39,7 +49,7 @@
 							</select>
 							<br><br>
 				<%
-				java.util.List dataList1 = (List) request.getSession().getAttribute("somename1");
+				java.util.List dataList1 = (List) request.getSession().getAttribute("employeeName");
 				java.util.Iterator itr1 = dataList1.iterator();
 				
 				%>
@@ -57,7 +67,7 @@
 					<br><br>
 					End Date (YYYY-MM-DD Format Only): <input type="date" name="enddate" value="">
 					<br><br>
-
+					
 					
 					<input type="submit" value="Allocate">
 					

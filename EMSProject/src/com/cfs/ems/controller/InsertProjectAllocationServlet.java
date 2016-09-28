@@ -32,6 +32,7 @@ public class InsertProjectAllocationServlet extends HttpServlet{
 			
 					LoginInterface inf = new LoginService();
 					boolean status=false;
+					
 			
 						try {
 							status = inf.projectAllocations(request);

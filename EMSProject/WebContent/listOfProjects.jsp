@@ -24,48 +24,54 @@ function editRecord1(id){
 </head>
 <%@include file="header.html"%>
 <body>
-<table height="100px"> <tr><td><%@include file="linklist.jsp"%></td>
-		<td>
-<form method="post" name="form">
-	<%
-	LinkedList<ProjectAllocation> dataList = (LinkedList) request.getSession().getAttribute("employeeList");
-	java.util.Iterator itr = dataList.iterator();
-	%>
-	<table border='black' cellpadding = '5'>
-	<tr>
-	<th>Project Allocation ID</th>
-	<th>Project ID</th>
-	<th>Project Name</th>
-	<th>Employee ID</th>
-	
-	<th>Designation</th>
-	<th>Start Date</th>
-	<th>End Date</th>
-	<th>Status</th>
-	</tr>
-	<%
-	for(ProjectAllocation pa : dataList){
-		%>
-		</tr>
-		<td><%=pa.getProjectAllId()%></td>
-		<td><%=pa.getProjectId()%></td>
-		<td><%=pa.getProjectName()%></td>
-		<td><%=pa.getEmployeeId()%></td>
-		    
-		<td><%=pa.getDesignation()%></td>
-		<td><%=pa.getStartDate()%></td>
-		<td><%=pa.getEndDate()%></td>
-		<td><%=pa.getStatus()%></td> 
-		<td> <input name="edit" type = 'button' value ='EDIT'  onclick="editRecord1(<%=pa.getProjectAllId()%>);"></td>
-		<td> <input name="delete" type = 'button' value ='DELETE' onclick="deleteRecord(<%=pa.getProjectAllId()%>);"></td>
-		</tr><%
+	<table height="100px">
+		<tr>
+			<td><%@include file="linklist.jsp"%></td>
+			<td>
+				<form method="post" name="form" >
+					<%
+						LinkedList<ProjectAllocation> dataList = (LinkedList) request
+								.getSession().getAttribute("employeeList");
+						java.util.Iterator itr = dataList.iterator();
+					%>
+					<table border='black' cellpadding='5'>
+						<tr>
+							<th>Project Allocation ID</th>
+							<th>Project ID</th>
+							<th>Project Name</th>
+							<th>Employee ID</th>
+
+							<th>Designation</th>
+							<th>Start Date</th>
+							<th>End Date</th>
+							<th>Status</th>
+						</tr>
+						<%
+							for (ProjectAllocation pa : dataList) {
+						%>
+						</tr>
+						<td><%=pa.getProjectAllId()%></td>
+						<td><%=pa.getProjectId()%></td>
+						<td><%=pa.getProjectName()%></td>
+						<td><%=pa.getEmployeeId()%></td>
+
+						<td><%=pa.getDesignation()%></td>
+						<td><%=pa.getStartDate()%></td>
+						<td><%=pa.getEndDate()%></td>
+						<td><%=pa.getStatus()%></td>
+						<td><input name="edit" type='button' value='EDIT'
+							onclick="editRecord1(<%=pa.getProjectAllId()%>);"></td>
+						<td><input name="delete" type='button' value='DELETE'
+							onclick="deleteRecord(<%=pa.getProjectAllId()%>);"></td>
+						</tr>
+						<%
 	}
 	%>
+					</table>
+			</td>
+		</tr>
 	</table>
-	</td>
-	</tr>
-	</table>
-</form>
-<%@include file="footer.html"%>
+	</form>
+	<%@include file="footer.html"%>
 </body>
 </html>
