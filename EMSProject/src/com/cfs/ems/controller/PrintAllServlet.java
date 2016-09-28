@@ -36,6 +36,8 @@ public class PrintAllServlet extends HttpServlet {
 		out.println("<table border='black' border-width='5'>"); // table
 																// boundaries
 		out.println("<tr>");
+		
+		
 		// creating a list of entries
 		out.println("<th>ProjectId</th>");
 		out.println("<th>Projectname</th>");
@@ -48,6 +50,8 @@ public class PrintAllServlet extends HttpServlet {
 		out.println("<th>Status</th>");
 		out.println("<th>Description</th>");
 		out.println("</tr>");
+		
+		
 		// extracting values from the table database
 		for (ProjectDomain l : list) {
 
