@@ -10,23 +10,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 import com.cfs.ems.dao.GetData;
 import com.cfs.ems.domain.ProjectDomain;
 
 public class PrintAllServlet extends HttpServlet {
 
- static final long serialVersionUID = 1L;
- 
- public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException
-	{	
-		
+	static final long serialVersionUID = 1L;
+
+	public void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws IOException {
+
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
-		List<ProjectDomain> list=null;
+		List<ProjectDomain> list = null;
 		try {
-				list = new GetData().getData();
+			list = new GetData().getData();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -34,10 +32,11 @@ public class PrintAllServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		out.println("<table border='black' border-width='5'>");
+
+		out.println("<table border='black' border-width='5'>"); // table
+																// boundaries
 		out.println("<tr>");
+		// creating a list of entries
 		out.println("<th>ProjectId</th>");
 		out.println("<th>Projectname</th>");
 		out.println("<th>Start Date</th>");
@@ -49,34 +48,39 @@ public class PrintAllServlet extends HttpServlet {
 		out.println("<th>Status</th>");
 		out.println("<th>Description</th>");
 		out.println("</tr>");
-		for (ProjectDomain l : list) {  
-				
+		// extracting values from the table database
+		for (ProjectDomain l : list) {
+
 			out.println("<tr>");
-			out.println("<td>"+l.getProjectId()+"</td>");
-			out.println("<td>"+l.getProjectName()+"</td>");
-			out.println("<td>"+l.getStartDate()+"</td>");
-			out.println("<td>"+l.getEndDate()+"</td>");
-			out.println("<td>"+l.getClientId()+"</td>");
-			out.println("<td>"+l.getClientName()+"</td>");
-			out.println("<td>"+l.getManagerName()+"</td>");
-			out.println("<td>"+l.getManagerId()+"</td>");
-			out.println("<td>"+l.getStatus()+"</td>");
-			out.println("<td>"+l.getDescription()+"</td>");
+			out.println("<td>" + l.getProjectId() + "</td>");
+			out.println("<td>" + l.getProjectName() + "</td>");
+			out.println("<td>" + l.getStartDate() + "</td>");
+			out.println("<td>" + l.getEndDate() + "</td>");
+			out.println("<td>" + l.getClientId() + "</td>");
+			out.println("<td>" + l.getClientName() + "</td>");
+			out.println("<td>" + l.getManagerName() + "</td>");
+			out.println("<td>" + l.getManagerId() + "</td>");
+			out.println("<td>" + l.getStatus() + "</td>");
+			out.println("<td>" + l.getDescription() + "</td>");
+
+			// editing the entry
 			out.println("<form action='EditProjectDetails' method=post>");
 			out.println("<td><input type='submit' value='Edit' name='Edit'></td>");
-			out.println("<input type='hidden' value="+l.getProjectId()+" name='Dropdown'>");
+			out.println("<input type='hidden' value=" + l.getProjectId()
+					+ " name='Dropdown'>");
 			out.println("</form>");
+
+			// deleting the entry
 			out.println("<form action='deleteProject' method=post>");
 			out.println("<td><input type='submit' value='Delete'></td>");
-			out.println("<input type='hidden' value="+l.getProjectId()+" name='pId'>");
+			out.println("<input type='hidden' value=" + l.getProjectId()
+					+ " name='pId'>");
 			out.println("</form>");
 			out.println("</tr>");
-			
-			
+
 		}
 		out.println("</table>");
-		
-		
+
 	}
 
 }
