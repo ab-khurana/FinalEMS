@@ -178,7 +178,7 @@ public class GetData {
 		ResultSet rs=stmt.executeQuery("select * FROM project_details" );
 		
 		LinkedList<ProjectDomain> list1 = new LinkedList<ProjectDomain>();
-		
+		// getting data from html page
 		while (rs.next()) {
 			
 			ProjectDomain p=new ProjectDomain();
@@ -189,6 +189,7 @@ public class GetData {
             p.setManagerName(rs.getString("manager_name"));
             p.setManagerId(rs.getString("manager_id"));
             p.setClientId(rs.getString("client_id"));
+            p.setClientName(rs.getString("client_Name"));
             p.setStatus(rs.getString("status"));
             p.setDescription(rs.getString("description"));
             
