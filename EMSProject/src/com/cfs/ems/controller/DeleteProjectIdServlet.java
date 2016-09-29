@@ -42,7 +42,7 @@ public class DeleteProjectIdServlet extends HttpServlet {
 		
 		// TODO Auto-generated method stub
 		
-		resp.sendRedirect("project");
+		resp.sendRedirect("PrintAllServlet");
 		
 		/*RequestDispatcher rd=req.getRequestDispatcher("/project");
 		 rd.forward(req, resp);*/

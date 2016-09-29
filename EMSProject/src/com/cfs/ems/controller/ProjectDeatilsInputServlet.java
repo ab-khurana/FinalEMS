@@ -96,7 +96,7 @@ public class ProjectDeatilsInputServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("project");
+		response.sendRedirect("PrintAllServlet");
 		/*RequestDispatcher rd=request.getRequestDispatcher("/project");
 		rd.forward(request, response);*/
 		

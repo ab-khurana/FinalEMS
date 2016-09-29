@@ -116,7 +116,7 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 		
 			//request.getSession().setAttribute("Status1", s);
 		
-			response.sendRedirect("project");
+			response.sendRedirect("PrintAllServlet");
 			
 			
 			
