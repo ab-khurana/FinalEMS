@@ -29,12 +29,12 @@ public class InsertProcessServlet extends HttpServlet{
 	ListOfProjectsInterface alldoa = new ListOfProjectsDatabase();
     List list=new ArrayList();
     list=alldoa.loguser();
-    request.getSession().setAttribute("somename", list);
+    request.getSession().setAttribute("projectName", list);
     
     List list1=new ArrayList();
     list1=alldoa.emplog();
     
-    request.getSession().setAttribute("somename1", list1);
+    request.getSession().setAttribute("employeeName", list1);
     
  RequestDispatcher rd = request.getRequestDispatcher("projectAllocation.jsp");
 	rd.include(request, response);    
