@@ -14,19 +14,27 @@ import javax.swing.text.html.HTMLDocument.Iterator;
 import com.cfs.ems.domain.Employee;
 import com.cfs.ems.service.SearchServiceImp;
 
-
-
+/**
+ * @author Lakshit Servlet for getting the Employee details using Employee_ID
+ */
 
 @WebServlet(description = "Search", urlPatterns = { "/SearchServlet" })
-
 public class SearchServlet extends HttpServlet {
-
-	public void doGet(HttpServletRequest request, HttpServletResponse response)  
-			throws ServletException, IOException {  
+	/**
+	 * Get method to process the request
+	 * 
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest,
+	 *      javax.servlet.http.HttpServletResponse)
+	 * @param request is the request object
+	 * @throws ServletException
+	 * @throws IOException
+	 */
+	public void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		Employee e = new Employee();
 
-		PrintWriter out = response.getWriter();  
+		PrintWriter out = response.getWriter();
 		SearchServiceImp sc = new SearchServiceImp();
 
 		try {
@@ -36,11 +44,9 @@ public class SearchServlet extends HttpServlet {
 			e1.printStackTrace();
 		}
 
+		if (e.getFirstName() != null) {
 
-		if (e.getFirstName()!=null){
-
-			
-            out.print("<table border=2>");
+			out.print("<table border=2>");
 			out.print("<tr>");
 			out.print("<th>EmployeeId</th>");
 			out.print("<th>Firstname</th>");
@@ -51,27 +57,20 @@ public class SearchServlet extends HttpServlet {
 
 			out.print("</tr>");
 
-
-
-			out.print("<td>"+  e.getEmployeeId() +"</td>");
-			out.print( "<td>"+  e.getFirstName()  +"</td>");
-			out.print( "<td>"+  e.getLastName()  +"</td>");
-			out.print( "<td>"+  e.getDesignation()  +"</td>");
-			out.print( "<td>"+  e.getRole()  +"</td>");
-			out.print( "<td>"+  e.getStatus()  +"</td>"); 
-
+			out.print("<td>" + e.getEmployeeId() + "</td>");
+			out.print("<td>" + e.getFirstName() + "</td>");
+			out.print("<td>" + e.getLastName() + "</td>");
+			out.print("<td>" + e.getDesignation() + "</td>");
+			out.print("<td>" + e.getRole() + "</td>");
+			out.print("<td>" + e.getStatus() + "</td>");
 
 			out.print("</tr>");
 
 			out.print("</table>");
 
-
-		}	
-		else{
+		} else {
 			out.println("Record not found");
-
 
 		}
 	}
 }
-
