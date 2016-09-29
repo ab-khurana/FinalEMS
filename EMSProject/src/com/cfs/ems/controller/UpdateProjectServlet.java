@@ -24,7 +24,7 @@ public class UpdateProjectServlet extends HttpServlet {
 	
 	private static final long serialVersionUID = 1L;
 
-	
+	//TEAM 2
 	
 public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
 	{	
