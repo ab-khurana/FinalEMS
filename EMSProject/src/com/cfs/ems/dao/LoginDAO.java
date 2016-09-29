@@ -23,7 +23,7 @@ public class LoginDAO implements LoginDAOInterface{
 
 		ResultSet rs = ps.executeQuery();
 		if(rs.next()){
-			if(rs.getString(4).equals("true")){
+			if(rs.getString(4).equals("y")){
 				status.setStatus(1);
 
 				String empId = rs.getString(1);
@@ -36,7 +36,7 @@ public class LoginDAO implements LoginDAOInterface{
 				status.setEmpLastName(rs2.getString(2));
 
 			}
-			if(rs.getString(4).equals("false")){
+			if(rs.getString(4).equals("n")){
 				//				status.setStatus(2);
 				String empId = rs.getString(1);
 				status.setEmpId(empId);

@@ -16,6 +16,9 @@ import com.cfs.ems.domain.Status;
 
 public class ListOfProjectsDatabase implements ListOfProjectsInterface {
 
+	/* (non-Javadoc)
+	 * @see com.cfs.ems.dao.ListOfProjectsInterface#extractData()
+	 */
 	@Override
 	public LinkedList<ProjectAllocation> extractData() {
 
@@ -285,15 +288,26 @@ public class ListOfProjectsDatabase implements ListOfProjectsInterface {
 
 			}
 			if(rs.getString(4).equals("n")){
-				status.setStatus(2);
+				//				status.setStatus(2);
 				String empId = rs.getString(1);
 				status.setEmpId(empId);
-				PreparedStatement ps2 = con.prepareStatement("select employee_details.First_Name, employee_details.Last_Name from employee_details inner join login_table on login_table.employee_id = employee_details.Employee_ID where login_table.employee_id = ?;");
+				PreparedStatement ps2 = con.prepareStatement("select employee_details.First_Name, employee_details.Last_Name,employee_details.IsManager from employee_details inner join login_table on login_table.employee_id = employee_details.Employee_ID where login_table.employee_id = ?;");
 				ps2.setString(1, empId);
 				ResultSet rs2 =  ps2.executeQuery();
-				rs2.next();
-				status.setEmpName(rs2.getString(1));
-				status.setEmpLastName(rs2.getString(2));
+				if(rs2.next()){
+					if(rs2.getString(3).equals("y")){
+						status.setStatus(2);
+						status.setEmpName(rs2.getString(1));
+						status.setEmpLastName(rs2.getString(2));
+					}
+					else {
+						status.setStatus(3);
+						status.setEmpName(rs2.getString(1));
+						status.setEmpLastName(rs2.getString(2));
+					}
+
+
+				}
 			}
 		}
 		else

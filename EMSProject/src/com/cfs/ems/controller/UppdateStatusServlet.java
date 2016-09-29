@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cfs.ems.dao.LeaveDao;
+import com.cfs.ems.domain.LeavePojo;
+import com.cfs.ems.service.LeaveService;
 
 public class UppdateStatusServlet extends HttpServlet {
 	
@@ -19,12 +20,15 @@ public class UppdateStatusServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		PrintWriter out = response.getWriter();
 		//String leave_id=(String)request.getServletContext().getAttribute("Leave_id");
-		LeaveDao leaveDao = new LeaveDao();
-		String leave_id=request.getParameter("leave_id");
-		String radio=request.getParameter(leave_id);
-	
 		
-		if(radio==null)
+		LeaveService leaveService = new  LeaveService();
+	
+		LeavePojo lp = new LeavePojo ();
+		String leave_id=request.getParameter("leave_id");
+		String updateStatus=request.getParameter(leave_id);
+	System.out.println(updateStatus);
+	System.out.println(leave_id);	
+		if(updateStatus==null)
 		{
 			
 			RequestDispatcher rd=request.getRequestDispatcher("/managerveiw");
@@ -33,7 +37,7 @@ public class UppdateStatusServlet extends HttpServlet {
 		
 		else{
 		try {
-			Boolean status = leaveDao.updatedLeaveList(radio,leave_id);
+			Boolean status = leaveService.updatedLeaveListService(updateStatus,leave_id);
 			if (status){
 				out.println("updated");
 				
