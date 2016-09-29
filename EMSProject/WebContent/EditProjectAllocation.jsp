@@ -12,13 +12,23 @@
 <title>Edit Project allocation</title>
 </head>
 <%@include file="header.html"%>
+<script language="javascript">
+function validateForm() {
+    var x = document.forms["form"]["startdate"].value;
+    var y = document.forms["form"]["enddate"].value;
+    if (y<x) {
+        alert("Date must be filled correctly");
+        return false;
+    }
+}
+</script>
 <body>
 
 	
 		<table height="100px">
 			<td><%@include file="linklist.jsp"%></td>
 			<td>
-				<form action=updateprojectAllocation method=post>
+				<form action=updateprojectAllocation method=post onsubmit="return validateForm()" name="form">
 
 					<%
 						java.util.List<ProjectAllocation> dataList = (List) request
