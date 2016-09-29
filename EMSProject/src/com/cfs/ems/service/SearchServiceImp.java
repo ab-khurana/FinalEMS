@@ -11,7 +11,6 @@ import com.cfs.ems.domain.Employee;
  *
  */
 public class SearchServiceImp implements SearchService {
-	
 	/**
 	 * @param request is request object
 	 * @return Employee object

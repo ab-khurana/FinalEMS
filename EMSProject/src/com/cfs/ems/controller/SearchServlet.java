@@ -26,6 +26,7 @@ public class SearchServlet extends HttpServlet {
 	 * Get method to process the request 
 	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 * @param request is the request object
+	 * @param response is the response object
 	 * @throws ServletException
 	 * @throws IOException
 	 */
