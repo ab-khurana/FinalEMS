@@ -48,19 +48,19 @@ public class EditProjectDetailsServlet extends HttpServlet {
 		out.println("<form action='UpdateProject' method='post'>");
 		out.println("<center>");
 
-		out.println("Project ID :<input type='text' value="+p.getProjectId()+" name=ProjectId>");
+		out.println("Project ID :<input type='text' value="+p.getProjectId()+" name=ProjectId disable> ");
 		out.println("<br><br><br>");
 
 
-		out.println("Project Name :<input type='text' value="+p.getProjectName()+" name=ProjectName>");
+		out.println("Project Name :<input type='text' value="+p.getProjectName()+" name=ProjectName required>");
 
 
 
 		out.println("<br><br><br>");
-		out.println("Satrt Date(YYYY-MM-DD Format Only) :<input type='date' value="+p.getStartDate()+" name=start_date>");
+		out.println("Satrt Date(YYYY-MM-DD Format Only) :<input type='date' value="+p.getStartDate()+" name=start_date required>");
 
 		out.println("<br><br><br>");
-		out.println("End Date(YYYY-MM-DD Format Only) :<input type='date' value="+p.getEndDate()+" name=end_date>");
+		out.println("End Date(YYYY-MM-DD Format Only) :<input type='date' value="+p.getEndDate()+" name=end_date required>");
 
 		out.println("<br><br><br>");
 		out.println("Manager Id:    <select name='Dropdown'>" ); 
@@ -120,7 +120,7 @@ public class EditProjectDetailsServlet extends HttpServlet {
 
 		out.println("<br><br><br>");
 
-		out.println("Status:    <select name='Status'>" ); 
+		out.println("Status:    <select name='Status' required>" ); 
 		l=null;
 		try {
 			l=new GetData().getData("status", "project_details" , "project_id", p.getProjectId());
@@ -139,7 +139,7 @@ public class EditProjectDetailsServlet extends HttpServlet {
 
 			if(p.getStatus().equals("Active"))
 			{
-				out.println("<option>InActive</option>");;
+				out.println("<option>InActive</option >");;
 			}
 			else
 				out.println("<option>Active</option>");
@@ -149,7 +149,7 @@ public class EditProjectDetailsServlet extends HttpServlet {
 		
 
 		out.println("<br><br><br>");
-		out.println("Description :<input type='text' value="+p.getDescription()+" name=Description>");
+		out.println("Description :<input type='text' value="+p.getDescription()+" name=Description required>");
 
 		out.println("<br><br><br>");
 

@@ -20,15 +20,17 @@ public class CreateNewClientServlet extends HttpServlet {
 		
 		
 		out.println("<form action='ClientInputDetails' method='post'>" +
-				"Client  Id: <input type='text' name ='ClientId' value=''>" + 
+				"Client  Id: <input type='text' name ='ClientId' value='' required>" + 
 				"<br><br>" +
-				"Client Name: <input type='text' name ='ClientName' value=''>	" +
+				"Client Name: <input type='text' name ='ClientName' value='' required>	" +
 				"<br><br>"+
 				
-				"Description: <input type='text' name ='Description' value=''>" +
+				"Description: <input type='text' name ='Description' value='' required>" +
 				
 					"<br><br>" +
 					"<input type='submit' value='Submit'> </form>");
+		
+		response.sendRedirect("CreateProject");
 					
 		
 	}

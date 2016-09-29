@@ -49,7 +49,7 @@ out.println("Manager Id:    <select name='Dropdown'>");
 				e.printStackTrace();
 			}
 			
-out.println("<option selected> </option>");
+
 for(String a: l)
 {
 out.println("<option>" +a+"</option>");
@@ -69,7 +69,7 @@ out.println("<br><br>" +
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			out.println("<option selected> </option>");
+			
 for (int i = 0; i < l1.size(); i++) {
 	        
 out.println("<option>" +l1.get(i)+"</option>");
