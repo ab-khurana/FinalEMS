@@ -318,12 +318,20 @@
 		<servlet-class>com.cfs.ems.controller.LeaveApplyServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>veiw</servlet-name>
-		<url-pattern>/veiw</url-pattern>
+		<servlet-name>veiwEmployee</servlet-name>
+		<url-pattern>/veiwEmployee</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>veiw</servlet-name>
-		<servlet-class>com.cfs.ems.controller.ViewApplyLeaveServlet</servlet-class>
+		<servlet-name>veiwEmployee</servlet-name>
+		<servlet-class>com.cfs.ems.controller.ViewApplyLeaveEmployeeServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>veiwManager</servlet-name>
+		<url-pattern>/veiwManager</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>veiwManager</servlet-name>
+		<servlet-class>com.cfs.ems.controller.ViewApplyLeaveManagerServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>managerveiw</servlet-name>
