@@ -45,11 +45,11 @@ public class UpdateEmployeeDetailsServlet extends HttpServlet {
 
 	if(st)
 	{
-	out.write("Employee detail is updated ");	
+	out.write("Employee details are updated ");	
 	out.write("<html><body><a href='view.html'>click</a></body></html>");
 	}
 	else{
-		out.write("failed to update");
+		out.write("Failed to update Employee details");
 		out.write("<html><body><a href='view.html'>click</a></body></html>");
 	}
 	

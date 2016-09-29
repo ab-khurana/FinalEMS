@@ -71,7 +71,7 @@ public class SearchServlet extends HttpServlet {
 			out.write("<html><body><a href='view.html'>click</a></body></html>");
 
 		} else {
-			out.println("Record not found");
+			out.println("Employee not found, Please enter valid Employee ID");
 			out.write("<html><body><a href='view.html'>click</a></body></html>");
 
 		}

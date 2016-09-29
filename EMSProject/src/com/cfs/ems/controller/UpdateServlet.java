@@ -103,7 +103,7 @@ public class UpdateServlet extends HttpServlet {
 		
 		}
 		else{
-			System.out.println("Record not found");
+			System.out.println("Employee not found, Please enter valid Employee ID");
 			out.write("<html><body><a href='view.html'>click</a></body></html>");
 		}
          
