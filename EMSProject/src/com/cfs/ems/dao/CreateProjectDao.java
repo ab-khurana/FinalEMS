@@ -18,7 +18,7 @@ public int insertIntoDatabase(ProjectDomain p) throws ClassNotFoundException, SQ
 	CreateConnection create= new CreateConnection();
 	Connection connection=create.createConnection();
 	
-	String sql = "insert into project_details values (?,?,?,?,?,?,?,?,?)";
+	String sql = "insert into project_details values (?,?,?,?,?,?,?,?,?,?)";
 	PreparedStatement p1 = connection.prepareStatement(sql);
 	p1.setString(1, p.getProjectId());
 	p1.setString(2, p.getProjectName());
@@ -29,6 +29,7 @@ public int insertIntoDatabase(ProjectDomain p) throws ClassNotFoundException, SQ
 	p1.setString(7, p.getClientId());
 	p1.setString(8, p.getStatus());
 	p1.setString(9, p.getDescription());
+	p1.setString(10, p.getClientName());
 	int status = p1.executeUpdate();
 	System.out.println("No. of records successfully inserted: "+status);
 	return status;
