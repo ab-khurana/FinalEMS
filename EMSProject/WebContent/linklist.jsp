@@ -85,6 +85,7 @@
 						<p>
 							<!-- LEAVE<br> <a href="apply leave.com">apply leave</a><br>
 							<a href="approval.com">approval</a><br> -->
+							<a href="LogoutServlet">LOGOUT</a>
 					</div>
 		</tr>
 	</table>
