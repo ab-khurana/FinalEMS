@@ -7,8 +7,23 @@ import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * @author Christal Sheeba, Asham Saud, Yogesh Palanivel & Abhinav Chaudary
+ * The ChangePasswordDao is getting the old password and new password in
+ * its changePassword method. It is changing the password with given
+ * employeeid and giving back status of the operation.  
+ *
+ */
 public class ChangePasswordDao {
 
+	/**
+	 * @param old
+	 * @param newPassword
+	 * @param req
+	 * @return Status: 1 = Successful change of password & 0 = Failure to change the password
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
 	public int changePassword(String old, String newPassword, HttpServletRequest req) throws ClassNotFoundException, SQLException
 	{   
 		
@@ -36,6 +51,8 @@ public class ChangePasswordDao {
 		System.out.println("Password form database" +getPassword);
 		System.out.println(old);
 		//System.out.println(getPassword);
+		/**if statement is used to find if given password is equal to old one or not. A mismatch will give status = 0 otherwise it
+		 * was success**/
 		if(getPassword.equals(old))
 		
 		{    System.out.println("verified");
