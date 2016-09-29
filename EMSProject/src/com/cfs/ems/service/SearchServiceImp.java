@@ -6,10 +6,17 @@ import com.cfs.ems.dao.SearchDao;
 import com.cfs.ems.dao.SearchDaoImp;
 import com.cfs.ems.domain.Employee;
 
-
-
+/**
+ * @author Lakshit
+ *
+ */
 public class SearchServiceImp implements SearchService {
-
+	
+	/**
+	 * @param request is request object
+	 * @return Employee object
+	 * @throws Exception
+	 */
 	public Employee search(HttpServletRequest request) throws Exception {
 
 		// Receiving user input

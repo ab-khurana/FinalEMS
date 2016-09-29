@@ -12,20 +12,21 @@ import javax.servlet.http.HttpServletResponse;
 import javax.swing.text.html.HTMLDocument.Iterator;
 
 import com.cfs.ems.domain.Employee;
+import com.cfs.ems.service.SearchService;
 import com.cfs.ems.service.SearchServiceImp;
 
 /**
- * @author Lakshit Servlet for getting the Employee details using Employee_ID
+ * @author Lakshit 
+ * Servlet for getting the Employee details using Employee_ID
  */
 
 @WebServlet(description = "Search", urlPatterns = { "/SearchServlet" })
 public class SearchServlet extends HttpServlet {
 	/**
-	 * Get method to process the request
-	 * 
-	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest,
-	 *      javax.servlet.http.HttpServletResponse)
+	 * Get method to process the request 
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
 	 * @param request is the request object
+	 * @param response is the response object
 	 * @throws ServletException
 	 * @throws IOException
 	 */
@@ -35,7 +36,7 @@ public class SearchServlet extends HttpServlet {
 		Employee e = new Employee();
 
 		PrintWriter out = response.getWriter();
-		SearchServiceImp sc = new SearchServiceImp();
+		SearchService sc = new SearchServiceImp();
 
 		try {
 			e = sc.search(request);
@@ -67,7 +68,7 @@ public class SearchServlet extends HttpServlet {
 			out.print("</tr>");
 
 			out.print("</table>");
-			out.write("<html><body><a href='view.html'>click</a></body></html>"); 
+			out.write("<html><body><a href='view.html'>click</a></body></html>");
 
 		} else {
 			out.println("Record not found");

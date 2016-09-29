@@ -7,10 +7,16 @@ import java.sql.Connection;
 
 import com.cfs.ems.domain.Employee;
 
-
-
+/**
+ * @author Lakshit
+ *
+ */
 public class SearchDaoImp implements SearchDao  {
-
+	/**
+	 * @param Employee_ID
+	 * @return Employee object
+	 * @throws Exception
+	 */
 	@Override
 	public Employee search1 (Employee e) throws Exception {
 
@@ -24,9 +30,6 @@ public class SearchDaoImp implements SearchDao  {
 		String id = (String) e.getEmployeeId();
 		ResultSet rs = st.executeQuery("select * from employee_details where Employee_ID= "+ id + "");
 		
-
-		System.out.println("connection");
-
 		while (rs.next()) {
 
 			String First_Name = rs.getString("First_Name");
@@ -34,8 +37,6 @@ public class SearchDaoImp implements SearchDao  {
 			String Designation = rs.getString("Designation");
 			String Role = rs.getString("Role");
 			String Status = rs.getString("Status");
-
-			System.out.println("Last_Name - " + First_Name + " " + "Last_Name - " +Last_Name);
 
 			e.setFirstName(rs.getString("First_Name"));
 			e.setLastName(rs.getString("Last_Name"));
