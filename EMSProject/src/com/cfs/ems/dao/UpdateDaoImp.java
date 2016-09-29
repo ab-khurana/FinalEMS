@@ -13,12 +13,20 @@ import com.cfs.ems.domain.Employee;
 import com.cfs.ems.domain.Employee;
 import com.mysql.jdbc.PreparedStatement;
 
+/**
+ * @author Valencia and Darshandeep
+ *
+ */
 public class UpdateDaoImp implements UpdateDao {
+	/**
+	 * @param e is Employee object
+	 * @return Employee object
+	 * @throws Exception
+	 */
 
 	@Override
 	public Employee update1(Employee e) throws Exception {
-		// TODO Auto-generated method stub
-
+		
 
 		Class.forName("com.mysql.jdbc.Driver");
 
@@ -54,10 +62,11 @@ public class UpdateDaoImp implements UpdateDao {
 		
 	}
 	
-
-
-
-
+	/**
+	 * @param e1 is Employee object
+	 * @return boolean
+	 * @throws Exception
+	 */
 		@Override
 		public boolean updateedit(Employee e1) throws Exception {
 			

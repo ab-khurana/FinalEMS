@@ -13,12 +13,22 @@ import javax.servlet.http.HttpServletResponse;
 import com.cfs.ems.service.UpdateEmployeeService;
 import com.cfs.ems.service.UpdateEmployeeServiceImp;
 
+/**
+ * @author Valencia and Darshandeep
+ *
+ */
 public class UpdateEmployeeDetailsServlet extends HttpServlet {
-
+	/**
+	 * Post method to update the Employee details
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 * @param request is the request object
+	 * @param response is the response object
+	 * @throws ServletException
+	 * @throws IOException
+	 */
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 	
-		
 		boolean st=false;
 		
 		PrintWriter out = response.getWriter();  

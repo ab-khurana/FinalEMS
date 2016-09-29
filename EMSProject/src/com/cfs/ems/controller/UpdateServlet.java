@@ -15,11 +15,20 @@ import com.cfs.ems.service.UpdateEmployeeService;
 import com.cfs.ems.service.UpdateEmployeeServiceImp;
 import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.ContentType;
 
-
-
+/**
+ * @author Valencia and Darshandeep
+ *
+ */
 
 @WebServlet("/UpdateServlet")
 public class UpdateServlet extends HttpServlet {
+	/**
+	 * Get method to process the request
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 * @param request is the request object
+	 * @param response is the response object
+	 * throws ServletException, IOException
+	 */
 	private static final long serialVersionUID = 1L;
 
 	
@@ -92,7 +101,6 @@ public class UpdateServlet extends HttpServlet {
          response.getWriter().write("</html>");
          out.write("<html><body><a href='view.html'>click</a></body></html>"); 
 		
-         System.out.println(e1.getFirstName());
 		}
 		else{
 			System.out.println("Record not found");

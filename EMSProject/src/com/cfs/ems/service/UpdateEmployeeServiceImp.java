@@ -1,42 +1,47 @@
 package com.cfs.ems.service;
 
 import java.text.SimpleDateFormat;
-
 import javax.servlet.http.HttpServletRequest;
-
 import com.cfs.ems.dao.UpdateDao;
 import com.cfs.ems.dao.UpdateDaoImp;
 import com.cfs.ems.domain.Employee;
 
+/**
+ * @author Valencia and Darshandeep
+ *
+ */
+
 public class UpdateEmployeeServiceImp implements UpdateEmployeeService {
-	
+	/**
+	 * @param request is request object
+	 * @return Employee object
+	 * @throws Exception
+	 */
+	@Override
 	public Employee update (HttpServletRequest request) throws Exception {
 
 		// Receiving user input
 
 		String id = request.getParameter("id");
 
-		
+		Employee emp = new Employee();
 
-	Employee emp = new Employee();
+		emp.setEmployeeId(id);
 
-	emp.setEmployeeId(id);
-
-	UpdateDao doi = new UpdateDaoImp();
-	Employee s = doi.update1 (emp);
+		UpdateDao doi = new UpdateDaoImp();
+		Employee s = doi.update1 (emp);
 	
-	
-
-		return s;
+	return s;
 	}
-
+	/**
+	 * @param request is request object
+	 * @return boolean
+	 * @throws Exception
+	 */
 	@Override
 	public boolean editemployee(HttpServletRequest request)
 			throws Exception {
 		boolean st=false;
-		
-		System.out.println("lala");
-		
 		
 		   String Employee_Id = request.getParameter("Employee_ID");
 		   String First_Name = request.getParameter("First_Name");
@@ -51,18 +56,13 @@ public class UpdateEmployeeServiceImp implements UpdateEmployeeService {
 		   int Salary = Integer.parseInt(request.getParameter("Salary"));
 		   String Skills = request.getParameter("Skills");
 		   String Gender = request.getParameter("Gender");
-		   
-		   System.out.println(First_Name);
-		  
-			
+		  	
 		  SimpleDateFormat sdf=new SimpleDateFormat("yyyy-mm-dd");
 		  java.sql.Date Birth_Date=new java.sql.Date(sdf.parse(BirthDate1).getTime());
 		  java.sql.Date Joining_Date=new java.sql.Date(sdf.parse(JoiningDate1).getTime());
 		 
 		    Employee e4 = new Employee();
 		   
-			
-		    
 			e4.setEmployeeId(Employee_Id);
 			e4.setFirstName(First_Name);
 			e4.setLastName(Last_Name);
@@ -77,7 +77,6 @@ public class UpdateEmployeeServiceImp implements UpdateEmployeeService {
 			e4.setSkills(Skills);
 			e4.setGender(Gender);
 			
-			System.out.println("enter into dao");
 			UpdateDao obj=new UpdateDaoImp();
 			st=obj.updateedit(e4);
 			
