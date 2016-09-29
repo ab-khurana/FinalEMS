@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.List;
 
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,12 +22,21 @@ public class EditProjectDetailsServlet extends HttpServlet {
 	}*/
 
 	private static final long serialVersionUID = 1L;
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
 	{
 		PrintWriter out = response.getWriter();
 
 		response.setContentType("text/html");
+		
+		request.getRequestDispatcher("/header.html").include(request, response);
 
+		out.println("<table>'");
+
+		out.println("<tr>");
+		out.println("<td>");
+		request.getRequestDispatcher("/linklist.jsp")
+				.include(request, response);
+		out.println("</td>");
 
 
 		String projectid=request.getParameter("Dropdown");
@@ -45,7 +55,7 @@ public class EditProjectDetailsServlet extends HttpServlet {
 		}
 
 
-		out.println("<form action='UpdateProject' method='post'>");
+		out.println("<td><form action='UpdateProject' method='post'>");
 		out.println("<center>");
 
 		out.println("Project ID :<input type='text' value="+p.getProjectId()+" name=ProjectId disable> ");
@@ -118,7 +128,7 @@ public class EditProjectDetailsServlet extends HttpServlet {
 		}
 		out.println("</select>");
 
-		out.println("<br><br><br>");
+		
 
 		out.println("Status:    <select name='Status' required>" ); 
 		l=null;
@@ -157,9 +167,12 @@ public class EditProjectDetailsServlet extends HttpServlet {
 		out.println("<br><br><br>");
 
 		out.println("<input type='submit' value='submit'/>");
-		out.println("</form>");
+		out.println("</form></td>");
 
+		out.println("</tr>");
+		out.print("</table>");
 
+		request.getRequestDispatcher("/footer.html").include(request, response);
 
 
 	}

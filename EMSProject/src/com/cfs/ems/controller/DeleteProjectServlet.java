@@ -30,8 +30,8 @@ public class DeleteProjectServlet extends HttpServlet {
 		request.getRequestDispatcher("/linklist.jsp")
 				.include(request, response);
 		out.println("</td>");
-
-		out.println("<td align = 'left'><form action='deleteProject' method='Post'>"
+		out.println("<td><h3>Select Project to DELETE::</h3>");
+		out.println("<form action='deleteProject' method='Post'>"
 				+ "<h4> Project ID:    <select name='pId'>");
 		List<String> l = null;
 		try {
