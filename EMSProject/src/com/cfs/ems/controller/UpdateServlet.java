@@ -104,6 +104,7 @@ public class UpdateServlet extends HttpServlet {
 		}
 		else{
 			System.out.println("Record not found");
+			out.write("<html><body><a href='view.html'>click</a></body></html>");
 		}
          
         
