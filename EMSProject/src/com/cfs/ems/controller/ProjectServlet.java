@@ -18,7 +18,7 @@ public class ProjectServlet extends HttpServlet {
 	}
 	
 	
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
 	{	
 		
 		PrintWriter out = response.getWriter();

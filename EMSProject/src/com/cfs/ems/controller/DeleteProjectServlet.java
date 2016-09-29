@@ -31,7 +31,7 @@ public class DeleteProjectServlet extends HttpServlet {
 				.include(request, response);
 		out.println("</td>");
 
-		out.println("<td><form action='deleteProject' method='Post'>"
+		out.println("<td align = 'left'><form action='deleteProject' method='Post'>"
 				+ "<h4> Project ID:    <select name='pId'>");
 		List<String> l = null;
 		try {
