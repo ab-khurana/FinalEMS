@@ -90,6 +90,7 @@ public class UpdateServlet extends HttpServlet {
          response.getWriter().write("</form>");
          response.getWriter().write("<center>");
          response.getWriter().write("</html>");
+         out.write("<html><body><a href='view.html'>click</a></body></html>"); 
 		
          System.out.println(e1.getFirstName());
 		}
