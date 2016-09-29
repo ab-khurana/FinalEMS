@@ -32,7 +32,7 @@ public class DeleteServlet extends HttpServlet {
 		int number=	delete.deleteEmployee(Employee_ID);
 		//printing output on servlet
 		out.println("Employee status updated");
-		
+		out.write("<html><body><a href='view.html'>click</a></body></html>"); 
 		
 		} catch (ClassNotFoundException e) {
 
