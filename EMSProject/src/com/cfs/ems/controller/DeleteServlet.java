@@ -12,9 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 import com.cfs.ems.dao.DeleteDao;
 
 
+/**
+ * @author aadya sharma
+ *
+ */
+
 public class DeleteServlet extends HttpServlet {
 
 	//Servlet taking request and showing response on delete servlet
+	/** Do get  method to delete of details an employee
+	 * @param req for request object
+	 * @param resp for response object
+	 * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		PrintWriter out= resp.getWriter();
@@ -32,7 +42,7 @@ public class DeleteServlet extends HttpServlet {
 		int number=	delete.deleteEmployee(Employee_ID);
 		//printing output on servlet
 		out.println("Employee status updated");
-		out.write("<html><body><a href='view.html'>click</a></body></html>"); 
+		
 		
 		} catch (ClassNotFoundException e) {
 

@@ -248,7 +248,7 @@
 
 	<servlet>
 		<servlet-name>abc</servlet-name>
-		<servlet-class>com.cfs.ems.controller.ViewsServlet</servlet-class>
+		<servlet-class>com.cfs.ems.controller.ViewServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>as</servlet-name>

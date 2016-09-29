@@ -17,19 +17,36 @@ import com.cfs.ems.service.EmployeeServiceMy;
 /**
  * Servlet implementation class RegisterServletMy
  */
-@WebServlet("/RegisterServletMy")
+/**
+ * @author vinamhat
+ *
+ */
+
 public class RegisterServlet extends HttpServlet {
+	
+	/** Do Post method to serve the request of registering an employee
+	 * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+	 *@param request for request object
+	 *@param response for response object
+	 @throws IOException, ServletException
+	*/
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
 		PrintWriter out = response.getWriter();
-		System.out.println("in first");
+		
+		
+		//object of EmployeeService 
 		EmployeeServiceMy employeeService = null; 
 		
+		//exception handling
 		try {
 			employeeService = new EmployeeServiceImplMy();
+			
+		//calling register function from service class 
 			Boolean status = employeeService.register(request);
+			
+		//checking status
 			if(status) {
 				out.print("Employee created successfully...!!!");
-				out.write("<html><body><a href='view.html'>click</a></body></html>"); 
 			} else {
 				out.print("Failed to create employee...!!!");
 			}

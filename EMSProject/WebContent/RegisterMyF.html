@@ -9,38 +9,72 @@
 				<font size="5" color="Red">Fill the Details:</font>
 				<br><br>
 				<form action="register" method="post">
-					Employee ID: <input type="number" name="employeeId" value="">
+					Employee ID: <input type="number" name="employeeId" value="" min="0" required>
 					<br><br>
-					First Name: <input type="text" name="firstName" value="">
+					First Name: <input type="text" name="firstName" value="" required>
 					<br><br>
 					Last Name: <input type="text" name="lastName" value="">
 					<br><br>
-					Email ID: <input type="text" name="emailID" value="">
+					Email ID: <input type="email" pattern="[^ @]*@[^ @]*"   name="emailID" value="" required>
 					<br><br>
 					
-					Birth Date (YYYY-MM-DD Format Only): <input type="date" name="birthDate" value="">
+					Birth Date (YYYY-MM-DD Format Only): <input type="date" name="birthDate" value="" min="1956-09-27" max="1995-09-27" required>
 					<br><br>
-					Joining Date (YYYY-MM-DD Format Only): <input type="date" name="joiningDate" value="">
+					Joining Date (YYYY-MM-DD Format Only): <input type="date" name="joiningDate" value="" min="2000-09-27" max="2016-09-27" required>
 					<br><br>
-					Phone No.: <input type="text" name="mobileNo" value="">
+					Phone No.(Indian): <input type="text" name="Phone Number" pattern="[7-9]{1}[0-9]{9}" maxlength="10"  required>
 					<br><br>
-					Address: <input type="text" name="address" value="">
+					Address: <input type="text" name="address" value="" required>
 					<br><br>
-					Salary (Numeric Only): <input type="text" name="salary" value="">
+					Salary (Numeric Only): <input type="number" name="salary" value="" min="0" required>
 					<br><br>
 					Designation: <input type="text" name="designation" value="">
 					<br><br>
-					Gender: <input type="text" name="gender" value="">
+					
+					Gender:<select name="Gender">
+					<option value="Male">Male</option>
+                    <option value="Female">Female</option>
+			        </select>
 					<br><br>
-					Role: <input type="text" name="role" value="">
+					
+					Role:<select name="Role">
+                    <option value="Tester">Tester</option>
+                    <option value="Developer">Developer</option>
+                    <option value="Team Lead">Team Lead</option>
+                    <option value="Manager">Manager</option>
+                    </select>
 					<br><br>
-					Status: <input type="text" name="status" value="">
+					
+					Status:<select name="Status">
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                    <option value="Terminated">Terminated</option>
+                     </select>
 					<br><br>
-					Skills: <input type="text" name="skills" value="">
+					
+					Skills:<select name="Skills">
+                    <option value="Java">Java</option>
+                    <option value=".Net">.Net</option>
+                    <option value="PHP">PHP</option>
+                    <option value="Testing">Testing</option>
+                    <option value="Android">Android</option>
+                     </select>
 					<br><br>
-					Is Admin: <input type="text" name="isAdmin" value="">
+					
+					
+					Is Admin:<select name="IsAdmin">
+                    <option value="Y">Y</option>
+                    <option value="N">N</option>
+                  
+                     </select>
 					<br><br>
-					Is Manager: <input type="text" name="isManager" value="">
+					
+					
+						Is Manager:<select name="IsManager">
+                    <option value="Y">Y</option>
+                    <option value="N">N</option>
+                  
+                     </select>
 					<br><br>
 					<input type="submit" value="Register">
 				</form>
@@ -50,6 +84,28 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
 
 
 
