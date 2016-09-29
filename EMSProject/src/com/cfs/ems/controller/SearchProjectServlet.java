@@ -1,5 +1,7 @@
 package com.cfs.ems.controller;
 
+//Get input for Project_id and Project_name from user
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -22,8 +24,10 @@ public class SearchProjectServlet extends HttpServlet {
 		
 		response.setContentType("text/html");
 		
-		
 		out.println("<Form action='SearchProjectDeatils' method='post'>");
+		
+		//Get Project Details based on Project_id
+		
 		out.println("Project Id:    <select name='project_id'>"); 
 		List<String> l=null;
 			try {
@@ -38,37 +42,39 @@ public class SearchProjectServlet extends HttpServlet {
 			}
 			
 			out.println("<option selected> </option>");
-for(String a: l)
-{
-out.println("<option>" +a+"</option>");
-}
-out.println("</select>");
-
-out.println("Project name:    <select name='project_name'>"); 
-l=null;
-	try {
-		l=new GetData().getData("project_name", "project_details");
-		
-	} catch (ClassNotFoundException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
+	for(String a: l)
+	{
+	out.println("<option>" +a+"</option>");
 	}
+	out.println("</select>");
 	
-	out.println("<option selected> </option>");
-for(String a: l)
-{
-out.println("<option>" +a+"</option>");
-}
-out.println("</select>");
-
-out.println("<input type='submit' value='Submit'>");
-
-out.print("</form>");
+	//Get Project Details based on Project Name
+	
+	out.println("Project name:    <select name='project_name'>"); 
+	l=null;
+		try {
+			l=new GetData().getData("project_name", "project_details");
+			
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
+		out.println("<option selected> </option>");
+	for(String a: l)
+	{
+	out.println("<option>" +a+"</option>");
+	}
+	out.println("</select>");
+	
+	out.println("<input type='submit' value='Submit'>");
+	
+	out.print("</form>");
+			
+		
+		}
 	
 	}
-
-}

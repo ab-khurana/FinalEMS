@@ -1,5 +1,7 @@
 package com.cfs.ems.controller;
 
+//Get values from user and validate the same
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -23,6 +25,7 @@ public class SearchProjectDeatilsServlet extends HttpServlet {
 		
 		response.setContentType("text/html");
 		
+		//Get values from user
 		
 		String projectId = request.getParameter("project_id");
 		
@@ -34,74 +37,115 @@ public class SearchProjectDeatilsServlet extends HttpServlet {
 		
 		ProjectDomain p=null;
 		
+		//When no input is selected
+		
+		
+		if((projectId=="")&&(projectName=="")){
+
+			
+				out.println(" Enter valid inputs ");
+	
+		}
+		
+		//If project name is null, print on basis of project id
+		else{
 		if(projectName=="")
 		{
 		
 		try {
 					p=new GetData().getData(projectId);
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
-		}
+			}
+		
+		
+		//If project id is null, print on basis of project name
 		
 		else
 			if(projectId=="")
-				
+			{
 				try {
 					p=new GetData().getData(projectName, 1);
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			
 			e.printStackTrace();
 		}
+			}
+		
+		//if both project id and name is given, validate them and print details
+		
 			else
+				if((projectId!=null)&&(projectName!=null)){
 				try {
 					p=new GetData().getData(projectId, projectName, 1);
 				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
+					
 					e.printStackTrace();
 				} catch (SQLException e) {
-					// TODO Auto-generated catch block
+				
 					e.printStackTrace();
 				}
+				}
 		
+		//If input values doesn't match with database values, alert the user
+				String s=p.getProjectId();
+				String q=p.getProjectName();
+				
+				if(s==null||q==null)
+				{	
+						
+					out.println("No record found    -      ");
+					out.println("Input mismatch: Check your inputs");
+					
+				}
 		
-		out.println("<table border='black' border-width='5'>");
-		out.println("<tr>");
-		out.println("<th>ProjectId</th>");
-		out.println("<th>Projectname</th>");
-		out.println("<th>Start Date</th>");
-		out.println("<th>End Date</th>");
-		out.println("<th>Client Id</th>");
-		out.println("<th>Manager Name</th>");
-		out.println("<th>Manager Id</th>");
-		out.println("<th>Status</th>");
-		out.println("<th>Description</th>");
-		out.println("</tr>");
+				
 		
+	
+				
+				//Print project details in browser
 		
-			out.println("<tr>");
-			out.println("<td>"+p.getProjectId()+"</td>");
-			out.println("<td>"+p.getProjectName()+"</td>");
-			out.println("<td>"+p.getStartDate()+"</td>");
-			out.println("<td>"+p.getEndDate()+"</td>");
-			out.println("<td>"+p.getClientId()+"</td>");
-			out.println("<td>"+p.getManagerName()+"</td>");
-			out.println("<td>"+p.getManagerId()+"</td>");
-			out.println("<td>"+p.getStatus()+"</td>");
-			out.println("<td>"+p.getDescription()+"</td>");
-			out.println("</tr>");
+				else
+				{
+					out.println("<table border='black' border-width='5'>");
+					out.println("<tr>");
+					out.println("<th>ProjectId</th>");
+					out.println("<th>Projectname</th>");
+					out.println("<th>Start Date</th>");
+					out.println("<th>End Date</th>");
+					out.println("<th>Client Id</th>");
+					out.println("<th>Manager Name</th>");
+					out.println("<th>Manager Id</th>");
+					out.println("<th>Status</th>");
+					out.println("<th>Description</th>");
+					out.println("</tr>");
+					
+					
+						out.println("<tr>");
+						out.println("<td>"+p.getProjectId()+"</td>");
+						out.println("<td>"+p.getProjectName()+"</td>");
+						out.println("<td>"+p.getStartDate()+"</td>");
+						out.println("<td>"+p.getEndDate()+"</td>");
+						out.println("<td>"+p.getClientId()+"</td>");
+						out.println("<td>"+p.getManagerName()+"</td>");
+						out.println("<td>"+p.getManagerId()+"</td>");
+						out.println("<td>"+p.getStatus()+"</td>");
+						out.println("<td>"+p.getDescription()+"</td>");
+						out.println("</tr>");
+					
+					out.println("</table>");
+					
 		
-		out.println("</table>");
-		
-		
-		
-		
+				}	
+		}
 	}
 }
+
