@@ -28,8 +28,8 @@
 						! --%>
 					<DIV align="LEFT">
 						<P>
-							DASHBOARD<br> <button><a href="dashboard.jsp">Dashboard</a></button><br>
-							<br>
+							<!-- DASHBOARD<br> <button><a href="dashboard.jsp">Dashboard</a></button><br>
+							<br> -->
 						<P>
 							<a href="view.html">EMPLOYEE</a><br>
 							
@@ -72,7 +72,7 @@
 							<input type="submit" value="allocate project">
 							</form> 
 							
-								<br> 
+								
 								 <!-- <a href="searchproject.com">search project</a><br> -->
 								 
 								 <form action="ListOfProjects">
