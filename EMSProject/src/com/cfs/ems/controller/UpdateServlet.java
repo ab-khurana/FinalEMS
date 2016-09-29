@@ -38,7 +38,8 @@ public class UpdateServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-
+		if(e1.getFirstName() != null) {
+			
 		response.getWriter().write("<html>");
 		 response.getWriter().write("<form action=updateemployeedetails method=post>");
          response.getWriter().write("<center>");
@@ -91,6 +92,10 @@ public class UpdateServlet extends HttpServlet {
          response.getWriter().write("</html>");
 		
          System.out.println(e1.getFirstName());
+		}
+		else{
+			System.out.println("Record not found");
+		}
          
         
 	}
