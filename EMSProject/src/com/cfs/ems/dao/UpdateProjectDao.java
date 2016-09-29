@@ -20,8 +20,10 @@ public int updateIntoDatabase(ProjectDomain p) throws ClassNotFoundException, SQ
 	
 	
 	PreparedStatement prepared = connection.prepareStatement("update project_details set start_date=? , end_date=?," +
-															"manager_name=?,manager_id=?,status=?,description=?, project_name=?, client_id=? where project_id=?");
-	prepared.setString(9, p.getProjectId());
+															"manager_name=?,manager_id=?,status=?,description=?, project_name=?, client_id=?, client_name=? where project_id=?");
+	System.out.println(p.getClientName());
+	prepared.setString(10, p.getProjectId());
+	prepared.setString(9, p.getClientName());
 	prepared.setString(7, p.getProjectName());
 	prepared.setDate(1, p.getStartDate());
 	prepared.setDate(2, p.getEndDate());

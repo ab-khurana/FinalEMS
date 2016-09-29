@@ -92,6 +92,7 @@ public class GetData {
             p.setEndDate(rs.getDate("end_date"));
             p.setManagerName(rs.getString("manager_name"));
             p.setManagerId(rs.getString("manager_id"));
+            p.setClientName(rs.getString("client_name"));
             p.setClientId(rs.getString("client_id"));
             p.setStatus(rs.getString("status"));
             p.setDescription(rs.getString("description"));

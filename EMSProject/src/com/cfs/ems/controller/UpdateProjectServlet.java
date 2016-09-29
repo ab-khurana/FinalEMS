@@ -92,7 +92,21 @@ public void doPost(HttpServletRequest request, HttpServletResponse response) thr
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		List l1=null;
+		try {
+			l1 = new GetData().getData("client_name", "client_details", "client_id", project.getClientId());
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
+		
+		String a2=(String)l1.get(0);
+		project.setClientName(a2);
+
 		int a=0;
 		try {
 			a = new UpdateProjectDao().updateIntoDatabase(project);
