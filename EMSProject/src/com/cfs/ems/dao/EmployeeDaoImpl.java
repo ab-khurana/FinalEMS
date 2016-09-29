@@ -8,15 +8,25 @@ import java.util.ArrayList;
 import com.cfs.ems.domain.Employee;
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
+/**
+ * @author aadsharm
+ *
+ */
 public class EmployeeDaoImpl implements EmployeeDao {
 
+ 
 	
+	/** 
+	 * @param Employee instance 
+	 * @return LinkedList of employee
+	 * @see com.cfs.ems.dao.EmployeeDao#view(com.cfs.ems.domain.Employee)
+	 */
 	public LinkedList<Employee> view(Employee e) throws Exception {
 		
 		
 		
-		   Connection conn = null;
-		   Statement stmt = null;
+		      Connection conn = null;
+		      Statement stmt = null;
 		   
 		      //STEP 2: Register JDBC driver
 		      Class.forName("com.mysql.jdbc.Driver");

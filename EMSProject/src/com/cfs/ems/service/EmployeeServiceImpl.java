@@ -17,23 +17,27 @@ import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 public class EmployeeServiceImpl implements EmployeeService{
 
-	public LinkedList<Employee> view(HttpServletRequest request,
+   public LinkedList<Employee> view(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 
 
+	   //object of dao class 
 		EmployeeDao employeeDao = new EmployeeDaoImpl();
 
+		//object of pojo class
 		Employee e= new Employee();
 
 
-		
+		//list for storing values of object employee
 		LinkedList<Employee> list = new LinkedList<>();
+		
+		//calling view function defined in dao class and saving in list
 		list = employeeDao.view(e);
 		Iterator<Employee> iter = list.iterator();
 
 		
 
-
+        //returning list of employees to view function  
 		return list;
 
 	}
@@ -41,9 +45,3 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 
 }
-
-
-
-
-
-

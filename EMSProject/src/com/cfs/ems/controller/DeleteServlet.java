@@ -14,21 +14,29 @@ import com.cfs.ems.dao.DeleteDao;
 
 public class DeleteServlet extends HttpServlet {
 
-	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-			throws ServletException, IOException {
+	//Servlet taking request and showing response on delete servlet
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		PrintWriter out= resp.getWriter();
-		
+		//taking parameter from form
 		String Employee_ID= req.getParameter("Employee_ID");
-		System.out.println(Employee_ID);
+		
+	    // obj of DeleteDao class
 		DeleteDao delete= new DeleteDao();
+		
+		//exception handling
 		try {
-			System.out.println("in try");
+			
+		//calling function from service class	
+			
 		int number=	delete.deleteEmployee(Employee_ID);
-		out.println(number+"employee status updated");
+		//printing output on servlet
+		out.println("Employee status updated");
+		
+		
 		} catch (ClassNotFoundException e) {
-			System.out.println("error");
+
+
 			e.getMessage();
 		} catch (SQLException e) {
 			
@@ -43,4 +51,3 @@ public class DeleteServlet extends HttpServlet {
 	
 
 }
- 
