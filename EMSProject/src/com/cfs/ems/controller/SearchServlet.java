@@ -67,6 +67,7 @@ public class SearchServlet extends HttpServlet {
 			out.print("</tr>");
 
 			out.print("</table>");
+			out.write("<html><body><a href='view.html'>click</a></body></html>"); 
 
 		} else {
 			out.println("Record not found");
