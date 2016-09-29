@@ -29,7 +29,7 @@ public class RegisterServlet extends HttpServlet {
 			Boolean status = employeeService.register(request);
 			if(status) {
 				out.print("Employee created successfully...!!!");
-			    out.write("<html><body> a href='view.html'</body></html>");
+				out.write("<html><body><a href='view.html'>click</a></body></html>"); 
 			} else {
 				out.print("Failed to create employee...!!!");
 			}
