@@ -12,6 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.cfs.ems.domain.LeavePojo;
 import com.cfs.ems.service.LeaveService;
 
+/**
+ * @author Shalini kawadkar
+ *
+ */
 public class ViewApplyLeaveManagerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
