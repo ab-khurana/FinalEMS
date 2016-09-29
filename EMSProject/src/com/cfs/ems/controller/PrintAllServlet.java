@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.cfs.ems.dao.GetData;
 import com.cfs.ems.domain.ProjectDomain;
-
+//team 2
 public class PrintAllServlet extends HttpServlet {
 
  static final long serialVersionUID = 1L;
@@ -50,6 +50,7 @@ public class PrintAllServlet extends HttpServlet {
 		out.println("<th>Start Date</th>");
 		out.println("<th>End Date</th>");
 		out.println("<th>Client Id</th>");
+		out.println("<th>Client Name</th>");
 		out.println("<th>Manager Name</th>");
 		out.println("<th>Manager Id</th>");
 		out.println("<th>Status</th>");
@@ -63,6 +64,7 @@ public class PrintAllServlet extends HttpServlet {
 			out.println("<td>"+l.getStartDate()+"</td>");
 			out.println("<td>"+l.getEndDate()+"</td>");
 			out.println("<td>"+l.getClientId()+"</td>");
+			out.println("<td>"+l.getClientName()+"</td>");
 			out.println("<td>"+l.getManagerName()+"</td>");
 			out.println("<td>"+l.getManagerId()+"</td>");
 			out.println("<td>"+l.getStatus()+"</td>");

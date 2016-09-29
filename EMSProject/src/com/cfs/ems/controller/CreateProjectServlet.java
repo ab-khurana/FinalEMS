@@ -14,39 +14,44 @@ import com.cfs.ems.dao.GetData;
 
 public class CreateProjectServlet extends HttpServlet {
 
-	
+
 	private static final long serialVersionUID = 1L;
-	
+
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException
 	{
 		PrintWriter out = response.getWriter();
 		
 		response.setContentType("text/html");
+		
+		//CreateProject html configuration
 		out.println("<form action='ProjectDeatilsInput' method='post'>" +
-					"Project  Id: <input type='text' name ='ProjectId' value=''>" + 
-					"<br><br>" +
-					"Project Name: <input type='text' name ='ProjectName' value=''>" +
-					"<br><br>" +
-					"Start Date(YYYY-MM-DD Format Only): <input type='text' id='DATE' name='start_date' value=''>" +
-					"<br><br>" +
-					"End Date(YYYY-MM-DD Format Only):   <input type='text' name ='end_date' value=' '>" +
-					"<br><br>");
-					out.println("Manager Id:    <select name='Dropdown'>"); 
-					List<String> l=null;
-					try {
-						l=new GetData().getData("employee_id", "employee_details");
+"Project  Id: <input type='text' name ='ProjectId' value='' min='0' required>" + 
+"<br><br>" +
+"Project Name: <input type='text' name ='ProjectName' value='' required>" +
+"<br><br>" +
+"Start Date(YYYY-MM-DD Format Only): <input type='text' id='DATE' name='start_date' value='' min='01-01-2000'max='30-12-2015' required>" +
+"<br><br>" +
+"End Date(YYYY-MM-DD Format Only):   <input type='text' name ='end_date' value=' 'min='01-01-2016'max='30-12-2035' required>" +
+"<br><br>");
+		
+out.println("Manager Id:    <select name='Dropdown'>"); 
+		
+		
+		List<String> l=null;
+			try {
+				l=new GetData().getData("employee_id", "employee_details");
 				
-						} catch (ClassNotFoundException e) {
-							
-							e.printStackTrace();
-							} catch (SQLException e) {
-				
-								e.printStackTrace();
-							}
+			} catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
-					out.println("<option selected> </option>");
-					for(String a: l)
-					{
+out.println("<option selected> </option>");
+for(String a: l)
+{
 out.println("<option>" +a+"</option>");
 }
 out.println("</select>");
@@ -77,7 +82,7 @@ out.println("</select> " +
 "<option>InActive</option> " +
 "</select>" +
 "<br><br>" +
-"Description:  <input type='text' name ='Description' value=' '>" +
+"Description:  <input type='text' name ='Description' value=' ' required>" +
 "<br><br>" +
 "<input type='submit' value='Submit'>" +
 " <input type ='reset' value='Reset'>" +

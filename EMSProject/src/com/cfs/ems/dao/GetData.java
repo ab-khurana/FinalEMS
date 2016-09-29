@@ -1,5 +1,5 @@
 package com.cfs.ems.dao;
-
+//team 2
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -189,6 +189,7 @@ public class GetData {
             p.setManagerName(rs.getString("manager_name"));
             p.setManagerId(rs.getString("manager_id"));
             p.setClientId(rs.getString("client_id"));
+            p.setClientName(rs.getString("client_name"));
             p.setStatus(rs.getString("status"));
             p.setDescription(rs.getString("description"));
             

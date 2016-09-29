@@ -61,8 +61,27 @@ public class ProjectDeatilsInputServlet extends HttpServlet {
 		
 		
 		project.setClientId(client_id);
+		List<String> l1=null;
+		try {
+			l1 = new GetData().getData("client_name", "client_details", "client_id", project.getClientId());
+		} catch (ClassNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
+		a1=(String)l.get(0);
+		
+		
+		project.setClientName(a1);
+		
 		project.setStatus(status);
 		project.setDescription(description);
+		String a2=(String)l1.get(0);
+		project.setClientName(a2);
+		
 		
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-mm-dd");
 		java.sql.Date strtDate;
@@ -73,6 +92,9 @@ public class ProjectDeatilsInputServlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		
+		
 		
 		
 		SimpleDateFormat formatter1 = new SimpleDateFormat("yyyy-mm-dd");
@@ -96,11 +118,10 @@ public class ProjectDeatilsInputServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-		response.sendRedirect("PrintAllServlet");
+		response.sendRedirect("project");
 		/*RequestDispatcher rd=request.getRequestDispatcher("/project");
 		rd.forward(request, response);*/
 		
 	}
-
 	
 }
